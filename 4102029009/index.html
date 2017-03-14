@@ -5,7 +5,6 @@
 	<script>
 		function generate(){
 			err="";
-			document.getElementById("textarea").innerHTML="";
 			form=document.forms["form1"];
 			if (form.name1.value==""){
 				err+="請輸入性名";
@@ -26,7 +25,7 @@
 				err+="\n請勾選興趣";
 			}
 			if (err==""){
-				document.getElementById("textarea").innerHTML="我叫"+form.name1.value+"生日"+form.bir.value+".....\n剩下的還是自己打吧!";
+				document.getElementById("textarea").value="我叫"+form.name1.value+"生日"+form.bir.value+".....\n剩下的還是自己打吧!";
 			}else{
 				alert(err);
 			}
