@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body> 
+  <form name="form1">
+    姓名：<input type="text"  name="Name" value=""><br>
+    性別：男<input type="radio"  name="SEX" checked value="0">
+    女<input type="radio"  name="SEX" value="1"><br>
+    生日：<input type="text"  name="Birth" value=""><br>
+    興趣：<input type="checkbox"  name="Hobby" value="旅遊">旅遊
+		<input type="checkbox"  name="Hobby" value="電影">電影
+		<input type="checkbox"  name="Hobby" value="美食">美食
+		<input type="checkbox"  name="Hobby" value="音樂">音樂<br>
+    自傳：<input type="text"  name="autograph" value=""><br>
+    <input type="button" value="送出" onclick="postData()" />
+  </form>
+  <p id="output"></p>
+  <script>
+    function postData(){
+	
+		if(confirm('你確定送出？')){
+        var output = document.getElementById("output");
+        var Name = document.form1.Name.value;
+        var SEX = "男";
+		if(document.form1.SEX.value==1)SEX = "女";
+        var Birth = document.form1.Birth.value;
+		var count = document.form1.Hobby.length;
+        var Hobby = "";
+		for(i=0;i<=3;i++)if(document.form1.Hobby[i].checked)Hobby+=(document.form1.Hobby[i].value+",");
+        var autograph = document.form1.autograph.value;
+        output.innerHTML ='<table style="border:3px #FFD382 dashed;" cellpadding="10" border="1"><tr><td>Name</td><td>'+Name+'</td></tr><tr><td>Sex</td><td>'+ SEX + '</td></tr><tr><td>Birth</td><td>'+ Birth+ '</td></tr><tr><td>Hobby</td><td>'+ Hobby + '</td></tr><tr><td>autograph</td><td>' + autograph + '</td></tr></table>';
+		window.open().document.write('<table style="border:3px #FFD382 dashed;" cellpadding="10" border="1"><tr><td>Name</td><td>'+Name+'</td></tr><tr><td>Sex</td><td>'+ SEX + '</td></tr><tr><td>Birth</td><td>'+ Birth+ '</td></tr><tr><td>Hobby</td><td>'+ Hobby + '</td></tr><tr><td>autograph</td><td>' + autograph + '</td></tr></table>');
+		}
+      ;
+	}
+  </script>
+</body>
+</html>
