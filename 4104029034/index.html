@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>互動式履歷表</title>
+	<style>
+		body {
+		    position: absolute;
+			background-color: #FF96FF;
+			margin-top: 10%;
+			margin-left: 20%;
+			margin-right: 20%;
+			border: 2px dotted red;
+			padding: 10px 10px 10px 10px;
+			font-family: sans-serif;
+		}  
+		</style>
+</head>
+
+<body>
+    <script language="JavaScript">
+		document.fgColor="red";
+		
+		function Function() {
+		  alert("已輸入");
+		
+          var output = document.getElementById("output");
+          var username = document.form1.username.value;
+		  var birthday = document.form1.birthday.value;
+		  var gd = document.form1.sex[0].checked;
+		  var sex;
+		  var i;
+		  var hobby = "";
+		  var note = document.form1.note.value;
+		  
+		  if(gd == true) { sex = "男";}else { sex = "女";}
+		  
+		  for(i = 0; i < document.form1.hobby.length; i++) { 
+		    if(document.form1.hobby[i].checked == true) {
+			  if(document.form1.hobby[i].value == "movie") {
+		        hobby += "電影 ";
+			  }else if(document.form1.hobby[i].value == "animax") {
+			    hobby += "動漫 ";
+			  }else if(document.form1.hobby[i].value == "sport") {
+			    hobby += "運動";
+			  }
+		    }
+		  }
+		  
+          output.innerHTML = "姓名:"+ username +"<br>";
+		  output.innerHTML += "性別:"+ sex +"<br>";
+		  output.innerHTML += "生日:"+ birthday+"<br>";
+		  output.innerHTML += "興趣:"+ hobby+"<br>";
+		  output.innerHTML += "自傳:"+ note;
+		}
+		
+	</script>
+
+    <form name="form1" action="User_Verification.jsp" method="post">
+    姓名-><br>
+	<input type="text" id="username" />
+    <br>
+	性別-><br>
+	<input type="radio" id="sex" value="male"> 男
+    <input type="radio" id="sex" value="female"> 女<br>
+    生日-><br>
+	<input type="text" id="birthday" />
+	<br>
+	興趣-><br>
+	<input type="checkbox" id="hobby" value="movie">電影
+    <input type="checkbox" id="hobby" value="animax">動漫
+	<input type="checkbox" id="hobby" value="sport">運動
+	<br>
+	自傳-><br>
+	<textarea id="note" ng-model="message" cols="40" rows="10"></textarea>
+	<br><br>
+	<input type="button" name="enter" value="enter" onClick="Function()">
+	<p id="output"></p>
+	</form>
+
+
+
+</body>
+<html>
