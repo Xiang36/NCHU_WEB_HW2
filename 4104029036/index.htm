@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>履歷</title>
+  </head>
+  <body>
+    <form name="form1">
+        姓名：<br>
+        <input type="text" name="username" placeholder="請輸入姓名" />
+        <br>
+        生日：<br>
+        <input type="text" name="birthday" placeholder="請輸入生日" />
+        <br>
+        <input type="radio" name="sex" value="male" checked> Male<br>
+        <input type="radio" name="sex" value="female"> Female<br>
+        <input type="radio" name="sex" value="other"> Other
+        <br>
+        <input type="checkbox" name="hobby" value="swimming" >游泳
+        <input type="checkbox" name="hobby" value="basketball">籃球
+        <input type="checkbox" name="hobby" value="baseball">棒球
+        <br>
+        自傳<textarea name="note" cols="50" rows="10"></textarea>
+        <br><br>
+        <input type="button" value="送出" onclick="test()"/>
+
+        <br>
+    </form>
+
+    <p id="output">顯示結果</p>
+    <script type="text/javascript">
+      function test(){
+        var output = document.getElementById("output");
+        var username = document.form1.username.value;
+        var bd = document.form1.birthday.value;
+        var sex = document.form1.sex.value;
+        var hobby = document.form1.hobby[0].value;
+        var hobby1 = document.form1.hobby[1].value;
+        var hobby2 = document.form1.hobby[2].value;
+        var note = document.form1.note.value;
+
+
+        if(Boolean(document.form1.hobby[0].checked)==true){var a=hobby}
+        else {var a = ""}
+        if(Boolean(document.form1.hobby[1].checked)==true){var b=hobby1}
+        else {var b = ""}
+        if(Boolean(document.form1.hobby[2].checked)==true){var c=hobby2}
+        else {var c = ""}
+
+
+
+        output.innerHTML = "姓名 : " + username  +
+                           "\n生日 : " + bd +
+                           "\n性別 : " + sex +
+                           "\n興趣 : " + a + "\n" + b + "\n"+ c +
+                           "\n自傳 : " + note ;
+
+      }
+    </script>
+
+  </body>
+</html>
