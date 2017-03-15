@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>履歷</title>
+    <style>
+    table {
+    border-collapse: collapse;
+    width: 100%;}
+    table, th, td {
+    border: 1px solid black;height: 50px;}
+  </style>
   </head>
   <body>
     <form name="form1">
         姓名：<br>
-        <input type="text" name="username" placeholder="請輸入姓名" />
+        <input type="text" id ="username" name="username" placeholder="請輸入姓名" />
         <br>
         生日：<br>
         <input type="text" name="birthday" placeholder="請輸入生日" />
@@ -24,14 +31,37 @@
         <br><br>
         <input type="button" value="送出" onclick="test()"/>
 
-        <br>
+        <br><br>
     </form>
 
     <p id="output">顯示結果</p>
+
+    <br><br>
+    <table>
+     <tr >
+       <th>姓名</th>
+       <th>生日</th>
+       <th>性別</th>
+       <th>興趣</th>
+       <th>自傳</th>
+     </tr>
+     <tr>
+       <td id="l">無</td>
+       <td id="m">無</td>
+       <td id="n">無</td>
+       <td id="o">無</td>
+       <td id="p">無</td>
+     </tr>
+   </table>
     <script type="text/javascript">
       function test(){
         var output = document.getElementById("output");
-        var username = document.form1.username.value;
+        var l = document.getElementById("l");
+        var m = document.getElementById("m");
+        var n = document.getElementById("n");
+        var o = document.getElementById("o");
+        var p = document.getElementById("p");
+        var username =  document.getElementById("username").value;
         var bd = document.form1.birthday.value;
         var sex = document.form1.sex.value;
         var hobby = document.form1.hobby[0].value;
@@ -55,8 +85,18 @@
                            "\n興趣 : " + a + "\n" + b + "\n"+ c +
                            "\n自傳 : " + note ;
 
-      }
+
+
+      l.innerHTML = username;
+      m.innerHTML = bd;
+      n.innerHTML = sex;
+      o.innerHTML = a + "\n" + b + "\n"+ c;
+      p.innerHTML = note;
+    }
     </script>
+
+
+
 
   </body>
 </html>
