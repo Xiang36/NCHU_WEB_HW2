@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <h2>履歷表</h2>
+  <style>
+    table {
+    border:3px #cccccc solid;;
+    width: 100%;}
+    table, th, td {
+    border: 1px solid black;height: 50px;}
+  </style>
+</head>
+<body>
+  <form name="form1">
+    姓名
+    <input type="text"  name="username" value="輸入姓名"><br>
+	生日
+	<input type="text"  name="userbd" value="輸入生日"><br>
+	性別
+	<input type="text"  name="usersex" value="輸入性別"><br>
+	興趣
+	<input type="text"  name="userhobby" value="輸入興趣"><br>
+    自傳<br>
+    <textarea cols=60 rows=6 name=userph>輸入文字 
+    </textarea> 
+	<br>
+    <input type="button" value="送出" onclick="postData()" />
+  </form>
+  <p></p>
+  <script>
+      function postData(){
+        var output1 = document.getElementById("output1");
+        var username = document.form1.username.value;
+		var output2 = document.getElementById("output2");
+		var userbd = document.form1.userbd.value;
+		var output3 = document.getElementById("output3");
+		var usersex = document.form1.usersex.value;
+		var output4 = document.getElementById("output4");
+		var userhobby = document.form1.userhobby.value;
+		var output5 = document.getElementById("output5");
+		var userph = document.form1.userph.value;
+        output1.innerHTML = "姓名：" + username ;
+		output2.innerHTML = "生日：" + userbd ;
+		output3.innerHTML = "性別：" + usersex ;
+		output4.innerHTML = "興趣：" + userhobby ;
+		output5.innerHTML = "自傳：" + userph ;
+      }
+  </script>
+  <table border="3">
+	<tr>
+	<td id="output1">姓名</td>
+	<td id="output2">生日</td>
+	</tr>
+	<tr>
+	<td id="output3">性別</td>
+	<td id="output4">興趣</td>
+	</tr>
+	</table>
+	<table border="1">
+    <tr>
+    <td id="output5">自傳</td>
+    </tr>
+    </table>
+</body>
+</html>
