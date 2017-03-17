@@ -8,17 +8,17 @@
 </head>
 <body>
   <form name="form1">
-    姓名&nbsp<input type="text" name="username" value=""><br>
-    生日&nbsp<input type="date" name="birthday" value=""><br>
+    姓名&nbsp: <input type="text" name="username" placeholder="請輸入姓名"><br>
+    生日&nbsp: <input type="date" name="birthday"><br>
     性別 :
-      男<input type="radio" name="sex" value="True" checked>
-      女<input type="radio" name="sex" value="False"><br>
+      <input type="radio" name="sex" value="True" checked>男
+      <input type="radio" name="sex" value="False">女<br>
     興趣 : <br>
       <input type="checkbox" name="hobby" value="電視">電視<br>
       <input type="checkbox" name="hobby" value="電影">電影<br>
       <input type="checkbox" name="hobby" value="看書">看書<br>
     自傳 ： <br>
-      <textarea rows=5 cols=50 name=note></textarea><br>
+      <textarea rows=5 cols=50 name=note placeholder="請輸入自傳"></textarea><br>
     <button id="btn" type="button" name="button" onclick="javascript:getForm()">Submit</button>
   </form>
 
