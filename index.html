@@ -1,21 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <form name="form1">
-    <input type="text"  name="username" value="路人甲">
-    <input type="button" value="送出" onclick="postData()" />
+    姓名&nbsp<input type="text" name="username" value=""><br>
+    生日&nbsp<input type="date" name="birthday" value=""><br>
+    性別 :
+      男<input type="radio" name="sex" value="True" checked>
+      女<input type="radio" name="sex" value="False"><br>
+    興趣 : <br>
+      <input type="checkbox" name="hobby" value="電視">電視<br>
+      <input type="checkbox" name="hobby" value="電影">電影<br>
+      <input type="checkbox" name="hobby" value="看書">看書<br>
+    自傳 ： <br>
+      <textarea rows=5 cols=50 name=note></textarea><br>
+    <button id="btn" type="button" name="button" onclick="javascript:getForm()">Submit</button>
   </form>
-  <p id="output"></p>
-  <script>
-      function postData(){
-        var output = document.getElementById("output");
-        var username = document.form1.username.value;
-        output.innerHTML = "歡迎您光臨 "+ username;
+
+  <table>
+    <tr>
+      <th>姓名</th>
+      <th>生日</th>
+      <th>性別</th>
+    </tr>
+    <tr>
+      <td id="n"></td>
+      <td id="b"></td>
+      <td id ="s"></td>
+    </tr>
+    <tr>
+      <th>興趣</th>
+      <th>自傳</th>
+    </tr>
+    <tr>
+      <td id="h"></td>
+      <td id="nt"></td>
+    </tr>
+
+  </table>
+  <script type="text/javascript">
+    function getForm()
+    {
+      var f = document.form1;
+      var uname = f.username.value;
+      var ubirth = f.birthday.value;
+      if (f.sex[0].checked === true)
+        var usex = "Male";
+      else
+        var usex = "Female";
+      var uhobby = f.hobby;
+      var hobbyarr = [];
+      var j = 0;
+      for (var i = 0; i < f.hobby.length; i++)
+      {
+        if (f.hobby[i].checked)
+          hobbyarr.push(f.hobby[i].value);
       }
+      var unote = document.form1.note.value;
+      alert("您輸入的資料為：\n姓名："+uname+"\n生日："+ubirth+"\n性別："+usex
+             +"\n興趣："+hobbyarr+"\n自傳："+unote);
+      document.getElementById("n").innerHTML=uname;
+      document.getElementById("b").innerHTML=ubirth;
+      document.getElementById("s").innerHTML=usex;
+      document.getElementById("h").innerHTML=hobbyarr;
+      document.getElementById("nt").innerHTML=unote;
+    }
   </script>
+
 </body>
 </html>
