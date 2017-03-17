@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>互動式履歷表</title>
+  <style>table { 
+ border:#7fffd4 5px solid; 
+ font-family: arial; 
+ font-size:25px; }
+ th { 
+ background-color:#add8e6; } 
+ td { 
+   border-bottom:1 solid #000000; } 
+ .fail { 
+   color:#FF0000; } 
+ </style>
+</head>
+<body>
+<h2 align=center>履歷表</h2>
+<hr>
+  <form name="form">
+    <p>姓名：<input name="name" placeholder="請輸入名字"  size=10 maxlength=20 >
+	 <p>生日：<input name="birth" placeholder="1990/01/01"   size=10 maxlength=20>
+	 <p>性別：<input name="sex" type=radio value="男"checked>男
+	          <input name="sex" type=radio value="女">女<P>
+	 <p>興趣：<input name="hobby" type=text size=8 maxlength=8><br>
+	 <p>自傳：<br>
+    <p><textarea name=index cols=80 rows=10 ></textarea>
+	<p><input type="button" value="送出" onclick="postData()"  name="B1"> <input type="reset" value="重填" name="B2">
+  </form>
+  <p id="output"></p>
+ <script>
+ function postData(){
+         var output = document.getElementById("output");
+        var name = document.form.name.value;
+ 		var sex = document.form.sex.value;
+ 		var birth = document.form.birth.value;
+ 		var hobby = document.form.hobby.value;
+ 		var index = document.form.index.value;
+        output.innerHTML="<table>"+"<tr>"+"<th>"+"姓名"+"</th>"+"<th>"+name+"</th>"+"</tr>"+
+ 		"<tr>"+"<th>"+"性別"+"</th>"+"<th>"+sex+"</th>"+"</tr>"+
+ 		"<tr>"+"<th>"+"生日"+"</th>"+"<th>"+birth+"</th>"+"</tr>"+
+ 		"<tr>"+"<th>"+"興趣"+"</th>"+"<th>"+hobby+"</th>"+"</tr>"+
+        "<tr>"+"<th>"+"自傳"+"</th>"+"<th>"+index+"</th>"+"</tr>"+"</table>";
+     }</script>
+	 </hr>
+</body>
+</html>
