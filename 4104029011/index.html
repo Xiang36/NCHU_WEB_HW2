@@ -19,12 +19,39 @@
         <input type="button" value="送出" onclick="test()" />
       </form>
 
+      <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      </style>
+<center><table>
+  <tr>
+    <th>姓名</th>
+    <th>生日</th>
+    <th>性別</th>
+    <th>興趣</th>
+    <th>自傳</th>
+  </tr>
+  <tr>
+    <th id="1"></th>
+    <th id="2"></th>
+    <th id="3"></th>
+    <th id="4"></th>
+    <th id="5"></th>
+
+
 
 <p id="output"></p>
 
 <script>
       function test(){
         var output = document.getElementById("output");
+        var table1 = document.getElementById("1");
+        var table2 = document.getElementById("2");
+        var table3 = document.getElementById("3");
+        var table4 = document.getElementById("4");
+        var table5 = document.getElementById("5");
         var username = document.form1.username.value;
         var bday = document.form1.bday.value;
         var sex = document.form1.sex.value;
@@ -39,6 +66,11 @@
         if(Boolean(document.form1.hobby[2].checked==true)){var c= hobby2}
         else{var c=""}
         output.innerHTML =username+ "\n"+ bday+ "\n"+ sex+"\n" + a+"\n"+b+"\n"+c+"\n" + note ;
+        table1.innerHTML = username;
+        table2.innerHTML = bday;
+        table3.innerHTML = sex;
+        table4.innerHTML = a+"\n"+b+"\n"+c;
+        table5.innerHTML = note;
       }
   </script>
 
