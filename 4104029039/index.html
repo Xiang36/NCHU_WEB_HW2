@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title自傳</title>
+    <style>
+    table, th, td {
+    border: 1px solid black;height: 50px;}
+  </style>
+  </head>
+  <body>
+    <form name="form1">
+        姓名：<br>
+        <input type="text" id ="username" name="username" placeholder="請輸入姓名" />
+        <br>
+        生日：<br>
+        <input type="text" name="birthday" placeholder="年年年年/月月/日日" />
+        <br>
+		性別：
+        <input type="radio" name="sex" value="男" checked> 男
+        <input type="radio" name="sex" value="女"> 女
+        <br>
+		興趣(可複選)：
+        <input type="checkbox" name="hobby" value="音樂" >音樂
+        <input type="checkbox" name="hobby" value="運動">運動
+        <input type="checkbox" name="hobby" value="閱讀">閱讀
+        <br>
+        自傳：<br>
+		<textarea name="note" cols="50" rows="10"placeholder="至少100字..."></textarea>
+        <br>
+        <input type="button" value="送出" onclick="send()"/>
+		<input type="reset" value="重新輸入">
+
+        <br><br><br>
+		
+    </form>
+    <p id="output">顯示結果</p>
+    <table>
+     <tr >
+       <th>姓名</th>
+       <th>生日</th>
+       <th>性別</th>
+       <th>興趣</th>
+       <th>自傳</th>
+     </tr>
+     <tr>
+       <td id="l"></td>
+       <td id="m"></td>
+       <td id="n"></td>
+       <td id="o"></td>
+       <td id="p"></td>
+     </tr>
+   </table>
+   
+    <script type="text/javascript">
+      function send(){
+        
+        var l = document.getElementById("l");
+        var m = document.getElementById("m");
+        var n = document.getElementById("n");
+        var o = document.getElementById("o");
+        var p = document.getElementById("p");
+        var username =  document.getElementById("username").value;
+        var birth = document.form1.birthday.value;
+        var sex = document.form1.sex.value;
+        var hobby = document.form1.hobby[0].value;
+        var hobby1 = document.form1.hobby[1].value;
+        var hobby2 = document.form1.hobby[2].value;
+        var note = document.form1.note.value;
+        if(Boolean(document.form1.hobby[0].checked)==true){var a=hobby}
+        else {var a = ""}
+        if(Boolean(document.form1.hobby[1].checked)==true){var b=hobby1}
+        else {var b = ""}
+        if(Boolean(document.form1.hobby[2].checked)==true){var c=hobby2}
+        else {var c = ""}
+		
+		alert("姓名 : " + username  +
+                           "\n生日 : " + birth +
+                           "\n性別 : " + sex +
+                           "\n興趣 : " + a + "   " + b + "   "+ c +
+                           "\n自傳 : " + note + "\n");
+      
+      l.innerHTML = username;
+      m.innerHTML = birth;
+      n.innerHTML = sex;
+      o.innerHTML = a + "\n" + b + "\n"+ c;
+      p.innerHTML = note;
+    }
+    </script>
+
+  </body>
+</html>
