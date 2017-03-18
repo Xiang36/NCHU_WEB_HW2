@@ -1,0 +1,135 @@
+<style>
+:root {
+	background: -webkit-linear-gradient(top,#3c465c,#5C4F3C);
+	--primary: #D3E0FF;
+	--solid: #fff;
+	--btn-w: 10em;
+	--dot-w: calc(var(--btn-w)*.2);
+	--tr-X: calc(var(--btn-w) - var(--btn-w)*.2);
+}
+* {box-sizing: border-box;}
+*:before, *:after {box-sizing: border-box;}
+
+body {
+	height: 100%vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: wrap;
+	background: var(--bg);
+	font-size: 20px;
+	font-family: 'Titillium Web', sans-serif;
+}
+.rbtn {
+	position: relative;
+	margin: 0 20px 0 20px;
+	width: 200px;
+	color: #78FFCD;
+	border: .15em solid #9effdb;
+	border-radius: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 18px;
+	line-height: 50px;
+	cursor: pointer;
+	font-family:微軟正黑體;
+	display:inline-block;
+	height:50px;
+}
+.rbtn1 {
+	position: relative;
+	margin: 0 20px 0 20px;
+	width: 200px;
+	color: #78FFCD;
+	border: .15em solid #9effdb;
+	border-radius: 5em;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 18px;
+	line-height: 50px;
+	cursor: pointer;
+	font-family:微軟正黑體;
+	display:inline-block;
+	height:50px;
+}
+.div1{
+	border-width:3px;
+	border-style:double;
+	border-color:#fff;
+	border-radius:20px;
+	padding:5px;
+	width:500px;
+	height:800px;
+	}
+.a{
+font-size:16px;
+line-eigt:center;
+font-family:微軟正黑體;
+}
+.text{font-color:#78FFCD; font-family:微軟正黑體; font-size: 18px; text-align:left; margin-left:10px;}
+</style>
+
+<div class="div1">
+<div style="width: 100%; height: auto; text-align: center; padding:50px 0 0 0;">
+<form class="text" name="form1" style="width:400px">
+    姓名：<br>
+    <input class="text" type="text" name="name" id="one"  placeholder="請輸入姓名" />
+    <br>
+    生日：<br>
+    <input class="text" type="text" name="birth" id="two" placeholder="請輸入生日"/>
+    <br><br>
+	性別：
+	<input type="radio"  name="sex" value="male">男
+	<input type="radio"  name="sex" value="female">女<br><br>
+	興趣：
+	<input type="radio"  name="hobby" value="吃飯">吃飯
+	<input type="radio"  name="hobby" value="睡覺">睡覺<br><br>
+	<input type="radio"  name="hobby" value="打東東">打東東<br><br>
+	自傳：<br>
+    <input class="text" type="text" name="res" id="three" placeholder="請輸入簡單自傳" style="height:150px;"/><br><br>
+	<input class="text" type="reset" value="重設">
+
+	<input class="text" type="submit" value="送出" onclick="processFormData();check()"/><br><br>
+</form>
+<div class="rbtn">
+<a href="index.html" style="color:#78FFCD;text-decoration:none;">
+		<span>Back</span>
+</a>
+	</div>
+</div>
+</div>
+
+<script language="JavaScript">
+
+function processFormData() {
+  var name_element = document.getElementById('one');
+  var name = name_element.value;
+      if(form1.name.value == "") 
+                        alert("未輸入姓名");
+  var birth_element = document.getElementById('two');
+  var birth = birth_element.value;
+      if(form1.birth.value == "") 
+                        alert("未輸入生日");
+ var sex = document.form1.sex.value;
+      if(form1.sex.value == "") 
+                        alert("未選擇性別");
+ var hobby = document.form1.hobby.value;
+      if(form1.hobby.value == "") 
+                        alert("未選擇興趣");
+ var res_element = document.getElementById('three');
+  var res = res_element.value;
+      if(form1.name.value == "") 
+                        alert("未輸入自傳");
+else
+ alert('你的姓名是' + name + '\n生日是' + birth+'\n性別是'+sex+'\n興趣是'+hobby+'\n自傳:'+res);
+ document.write("<table style='background-color:#FFF; border: 5px double #666;'><tr><td>姓名:"+name+"</td><td>生日:"+birth+"</td><td>性別:"+sex+"</td></tr><tr><td>興趣:"+hobby+"</td></tr><tr><td>自傳:"+res+"</td></tr></table>")
+}
+
+
+
+
+
+　
+
+</script>
+
