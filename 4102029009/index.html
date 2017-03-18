@@ -1,0 +1,142 @@
+<html>
+<head>
+	<title>自傳</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script>
+		function generate(){
+			err="";
+			form=document.forms["form1"];
+			if (form.name1.value==""){
+				err+="請輸入性名";
+			}
+			if (form.bir.value==""){
+				err+="\n請輸入生日";
+			}
+			if (form.gender.value==""){
+				err+="\n請選擇性別";
+			}
+			hobby="";
+			for(var i=0;i<form.hobby.length;i++){
+				if(form.hobby[i].checked){
+					hobby+=form.hobby[i].value+"\n";
+				}
+			}
+			if (hobby==""){
+				err+="\n請勾選興趣";
+			}
+			if (err==""){
+				document.getElementById("textarea").value="我叫"+form.name1.value+"生日"+form.bir.value+".....\n剩下的還是自己打吧!";
+			}else{
+				alert(err);
+			}
+		}
+		
+		function gogo(){
+			err="";
+			form=document.forms["form1"];
+			if (form.name1.value==""){
+				err+="請輸入性名";
+			}
+			if (form.bir.value==""){
+				err+="\n請輸入生日";
+			}
+			if (form.gender.value==""){
+				err+="\n請選擇性別";
+			}
+			hobby="";
+			for(var i=0;i<form.hobby.length;i++){
+				if(form.hobby[i].checked){
+					hobby+=form.hobby[i].value+"\n";
+				}
+			}
+			if (hobby==""){
+				err+="\n請勾選興趣";
+			}
+			if (form.textarea.value==""){
+				err+="\n請填寫自傳";
+			}
+			if (err==""){
+				document.getElementById("div3").style.display ="";
+				document.getElementById("tname").innerHTML=form.name1.value;
+				document.getElementById("tbir").innerHTML=form.bir.value;
+				document.getElementById("tgen").innerHTML=form.gender.value;
+				document.getElementById("thob").innerHTML=hobby;
+				document.getElementById("ttex").innerHTML=form.textarea.value;
+			}else{
+				alert(err);
+			}
+		}
+
+	</script>
+</head>
+
+<body>
+<div id="div1">
+<p class="green">我是張宏榮，今年二十二歲快二十三歲明年可能就二十四了。<br>
+出生於彰化縣，目前就讀國立中興大學資管系。<br></p>
+<p>興趣是:<br>
+<button onclick="window.location='test'">打LOL</button><br>
+<button onclick="window.location='test/test'">看書</button>
+</p>
+</div>
+<div id="div2">
+	<fieldset>
+		<legend>登入</legend>
+		<form action="#">
+		帳號:<br>
+		<input type="text" name="name" value="" placeholder="name">
+		<br>
+		密碼:<br>
+		<input type="password" name="password" value="" placeholder="password">
+		<br><br>
+		<input type="reset" value="清空">
+		<input type="submit" value="登入">
+		</form> 
+	</fieldset>
+</div>
+<fieldset>
+	<legend>表單</legend>
+	<form action="#" name="form1">
+	姓名<br>
+	<input type="text" name="name1" placeholder="name"><br>
+	生日<br>
+	<input type="text" name="bir" placeholder="birthday"><br>
+	性別<br>
+	<input type="radio" name="gender" value="male"> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	興趣<br>
+	<input type="checkbox" name="hobby" value="book">看書<br>
+	<input type="checkbox" name="hobby" value="ball">打球<br>
+	<input type="checkbox" name="hobby" value="sleep">睡覺<br>
+	自傳<br>
+	<textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><input type="button" onclick="generate()" value="自動生成自傳"/>
+	<br>
+	<input type="reset" value="清空">
+	<input type="button" value="送出" onclick="gogo()"/>
+	</form> 
+</fieldset>
+
+<br><br>
+<div id="div3" align="center" style="display:none">
+<table border="1">
+	<tr>
+		<td>姓名</td><td id="tname"></td>
+	</tr>
+	<tr>
+		<td>生日</td><td id="tbir"></td>
+	</tr>
+	<tr>
+		<td>性別</td><td id="tgen"></td>
+	</tr>
+	<tr>
+		<td>興趣</td><td id="thob"></td>
+	</tr>
+	<tr>
+		<td>自傳</td><td id="ttex"></td>
+	</tr>
+</table>
+</div>
+</body>
+
+
+</html>

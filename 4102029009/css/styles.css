@@ -1,0 +1,32 @@
+body {
+	background-image: url(../img/123.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+p {
+	color :red;
+    font-family: verdana;
+    font-size: 20px;
+}
+p.green{
+	color :green;
+    font-family: verdana;
+    font-size: 20px;
+}
+#div1{
+	margin-top:5px;
+	margin-bottom:20px; 
+	border-style:dashed;
+	border-width:medium;
+	text-align:center;
+	padding-top:50px; 
+	padding-left:15px; 
+	padding-right:15px; 
+	padding-bottom:15px;
+	float:left;
+}
+#div2{
+	float:right;
+}
