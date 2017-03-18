@@ -1,21 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <form name="form1">
-    <input type="text"  name="username" value="路人甲">
-    <input type="button" value="送出" onclick="postData()" />
-  </form>
-  <p id="output"></p>
-  <script>
+<html>
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>表單</title>
+	<style>	
+		table,th,td{
+			margin-left:50px;
+			margin-bottom:100px;
+			border-style:ridge;
+			border-color:rgb(300, 200, 500);
+			font-size: 130%;
+			font-style:normal;
+			font-family:cursive;
+			padding-top:10px; 
+			padding-left:5px; 
+			padding-right:5px; 
+			padding-bottom:10px;
+		}
+
+		form{
+			background-color:rgb(250, 230, 280);
+			margin-left:50px;
+			margin-right:500px;
+			margin-bottom:50px;
+			padding-top:20px; 
+			padding-left:50px; 
+			padding-right:5%; 
+			padding-bottom:50px;
+		}
+		
+	</style>
+	</head>
+	
+	<body>
+	<h1>履歷表</h1>
+
+	<form name="form1">
+	姓名：<br>
+	<input type="text" name="username" value="王竹妙"/><br><br>
+	生日：<br>
+	<input type="text" name="birthday" value="1997/5/19"/><br><br>
+	性別：<br>
+	<input type="radio" name="sex" value="男">男<br>
+	<input type="radio" name="sex" value="女" checked>女<br><br>
+	興趣：<br>
+	<input type="checkbox" name="hobby" value="游泳/" checked>游泳
+	<input type="checkbox" name="hobby" value="看書/">看書
+	<input type="checkbox" name="hobby" value="看電影/">看電影
+	<input type="checkbox" name="hobby" value="其他">其他<br><br>
+	自傳：<br>
+	<textarea rows=20 cols=50 name="note"></textarea><br><br>
+	<input type="button" value="送出" onclick="postData()"/>
+	</form>
+    <p id="output"></p>
+	
+	<script>
       function postData(){
         var output = document.getElementById("output");
         var username = document.form1.username.value;
-        output.innerHTML = "歡迎您光臨 "+ username;
-      }
-  </script>
-</body>
+		var birthday = document.form1.birthday.value;
+		var sex = document.form1.sex.value;
+		var hobby = document.form1.hobby[0].value;
+		var hobby1 = document.form1.hobby[1].value;
+		var hobby2 = document.form1.hobby[2].value;
+		var hobby3 = document.form1.hobby[3].value;
+		var note = document.form1.note.value;
+		
+		if(Boolean(document.form1.hobby[0].checked==true)){var a= hobby}
+        else{var a=""}
+        if(Boolean(document.form1.hobby[1].checked==true)){var b= hobby1}
+        else{var b=""}
+        if(Boolean(document.form1.hobby[2].checked==true)){var c= hobby2}
+        else{var c=""}
+		if(Boolean(document.form1.hobby[3].checked==true)){var d= hobby3}
+        else{var d=""}
+		
+		alert("送出！");
+        output.innerHTML = "<table><tr> <th>姓名</th> <th>生日</th> <th>性別</th> <th>興趣</th> <th>自傳</th> </tr>"
+				+"<tr><td>"+username+"</td> <td>"+birthday+"</td> <td>"+sex+"</td> <td>"+(a+b+c+d)+"</td> <td>"+note+"</td> </tr> </table>";
+		}
+	</script>
+	</body>
+
 </html>
