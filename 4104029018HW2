@@ -1,0 +1,77 @@
+<html>
+<center><head>問卷調查</title>
+ 	
+	<style>
+	body{
+	background-color:MediumSlateBlue;
+	}
+	</body>
+ 	table, td, th {
+ 		border: 1px solid black;
+ 		border-collapse: collapse;
+ 	}
+ 	</style>
+ </head>
+<body>
+<form name="form1">
+	名字：<INPUT name="username" type=text size=10 maxlength=20><P>
+	生日：<INPUT name="birth" type=date><P>
+	性別：<INPUT name="sex" type=radio value="男">男
+	     <INPUT name="sex" type=radio value="女">女<P>
+	興趣（可複選）：
+		<INPUT name="f1" type=checkbox value="read">閱讀
+		<INPUT name="f1" type=checkbox value="music">音樂
+		<INPUT name="f1" type=checkbox value="chat">聊天<P>
+	自傳：
+		<br><textarea name="note" col="10" rows="5"></textarea><br>
+	<input type="button" value="送出" onClick="a()">
+	<input type="reset" value="重新輸入">
+</form><br><br>
+<table>
+ 	<tr>
+		<td>名字：</td>
+		<td id="tname"></td>
+ 	</tr>
+ 	<tr>
+		<td>生日：</td>
+		<td id="tbirth"></td>
+	</tr>
+ 	<tr>
+		<td>性別：</td>
+		<td id="tsex"></td>
+ 	</tr>
+ 	<tr>
+		<td>興趣：</td>
+		<td id="thobby"></td>
+ 	</tr>
+ 	<tr>
+		<td>自傳：</td>
+		<td id="tnote"></td>
+ 	</tr>
+ </table>
+<script>
+function a(){
+	var name = document.form1.username.value;
+	var birthd = document.form1.birth.value;
+	var sexd = document.form1.sex.value;
+	var hobbyd = "";
+	for(i=0;i<document.forms['form1']['f1'].length;i++){
+		if(document.forms['form1']['f1'][i].checked){
+			hobbyd += document.forms['form1']['f1'][i].value + ",";
+			}
+	}
+    var noted = document.form1.note.value;
+	/*document.write("名字：" + name + "</br>");
+	document.write("生日：" + birthd + "</br>");
+	document.write("性別：" + sexd + "</br>");
+	document.write("興趣：" + hobbyd + "</br>");
+	document.write("自傳：" + noted + "</br>");*/
+	tname.innerHTML = name;
+	tbirth.innerHTML = birthd;
+	tsex.innerHTML = sexd;
+	thobby.innerHTML = hobbyd;
+	tnote.innerHTML = noted;
+}
+</script>
+</body>
+</html>
