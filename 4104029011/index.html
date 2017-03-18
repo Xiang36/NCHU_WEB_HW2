@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <form name="form1">
+        姓名:<br>
+        <input type="text" size="20" name="username" placeholder="name"><br>
+        生日:<br>
+        <input type="text" size="20" name="bday" placeholder="birthday"><br>
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女<br>
+        <input type="checkbox" name="hobby" value="swimming">游泳
+        <input type="checkbox" name="hobby" value="basketball">籃球
+        <input type="checkbox" name="hobby" value="baseball">棒球<br>
+        自傳<br><textarea name="note" cols="50" rows="10"></textarea>
+        <input type="button" value="送出" onclick="test()" />
+      </form>
+
+      <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      </style>
+<center><table>
+  <tr>
+    <th>姓名</th>
+    <th>生日</th>
+    <th>性別</th>
+    <th>興趣</th>
+    <th>自傳</th>
+  </tr>
+  <tr>
+    <th id="1"></th>
+    <th id="2"></th>
+    <th id="3"></th>
+    <th id="4"></th>
+    <th id="5"></th>
+
+
+
+<p id="output"></p>
+
+<script>
+      function test(){
+        var output = document.getElementById("output");
+        var table1 = document.getElementById("1");
+        var table2 = document.getElementById("2");
+        var table3 = document.getElementById("3");
+        var table4 = document.getElementById("4");
+        var table5 = document.getElementById("5");
+        var username = document.form1.username.value;
+        var bday = document.form1.bday.value;
+        var sex = document.form1.sex.value;
+        var hobby = document.form1.hobby[0].value;
+        var hobby1 = document.form1.hobby[1].value;
+        var hobby2 = document.form1.hobby[2].value;
+        var note = document.form1.note.value;
+        if(Boolean(document.form1.hobby[0].checked==true)){var a= hobby}
+        else{var a=""}
+        if(Boolean(document.form1.hobby[1].checked==true)){var b= hobby1}
+        else{var b=""}
+        if(Boolean(document.form1.hobby[2].checked==true)){var c= hobby2}
+        else{var c=""}
+        output.innerHTML =username+ "\n"+ bday+ "\n"+ sex+"\n" + a+"\n"+b+"\n"+c+"\n" + note ;
+        table1.innerHTML = username;
+        table2.innerHTML = bday;
+        table3.innerHTML = sex;
+        table4.innerHTML = a+"\n"+b+"\n"+c;
+        table5.innerHTML = note;
+      }
+  </script>
+
+
+
+</body>
+</html>
