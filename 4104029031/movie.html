@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 560px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/6 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+table, th, td {
+    border: 1px solid #FFFFFF;
+}
+
+</style>
+</head>
+<body bgcolor="	#000000" text="#FFFFFF">
+
+<table>
+  <tr>
+    <th>編號</th>
+    <th>電影</th>
+    <th>上映日期</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>亞瑟：王者之劍</td>
+    <td>5月12日(週五)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>美女與野獸</td>
+    <td>3月16日(週四)</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>神力女超人</td>
+    <td>6月1號</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>攻殼機動隊</td>
+    <td>3月30號</td>
+  </tr>
+    <tr>
+    <td>5</td>
+    <td>神鬼奇航5：死無對證</td>
+    <td>5月24號</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>明天 我要和昨天的你約會!!</td>
+    <td>3月10號</td>
+  </tr>
+</table>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/COP_saMdLDc" frameborder="0" allowfullscreen></iframe>
+  <div class="text">One</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3L_RNQnZuNQ" frameborder="0" allowfullscreen></iframe>
+  <div class="text">Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ImxWNbx43wM" frameborder="0" allowfullscreen></iframe>
+  <div class="text">Three</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/vfkzrhPZ_u0?ecver=2" frameborder="0" allowfullscreen></iframe>
+  <div class="text">Four</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/y4bSHV9uS-s?ecver=2" frameborder="0" allowfullscreen></iframe>
+  <div class="text">Five</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/_Jks1gExvOw?ecver=2" frameborder="0" allowfullscreen></iframe>
+  <div class="text">Five</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<form>想看電影??<br>
+    帳號：<br>
+    <input type="text" name="account" placeholder="請輸入帳號" />
+    <br>
+    密碼：<br>
+    <input type="password" name="pwd" placeholder="請輸入密碼"/>
+    <br><br>
+    <button type="button" onclick="alert('還沒做好喔!!!')">登入</button>
+	<br>想看哪個<br>
+	<input type="checkbox" name="movie" value="a">亞瑟<br>
+    <input type="checkbox" name="movie" value="b">美女與野獸<br>
+    <input type="checkbox" name="movie" value="c">神力女超人<br>
+	<input type="checkbox" name="movie" value="d">攻殼機動隊<br>
+	<input type="checkbox" name="movie" value="e">強尼戴普<br>
+	<input type="checkbox" name="movie" value="e">明天的你要和昨天的我約會??
+	昨天的你要和明天的我約會?? 什麼?<br>
+	<button type="button" value="VIESHOW" onclick="location.href='http://web.vscinemas.com.tw/'">真的想看電影????去真的威秀</button>
+	</form>
+
+
+<br>
+<a href="index.html" ><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7QJHs0PpmzlE7Xgn6gKMQNq3kT_EfibvQ4iJDQv9WN1tRdkrIPw"height="100"width="100"></a>
+
+</body>
+</html> 

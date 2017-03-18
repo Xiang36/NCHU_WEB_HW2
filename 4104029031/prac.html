@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>互動式履歷表</title>
+
+</head>
+
+<body bgcolor="black">
+    <script language="JavaScript">
+		document.fgColor="white";
+		
+		function Function() {
+          var output = document.getElementById("output");
+          var username = document.form1.username.value;
+		  var birthday = document.form1.birthday.value;
+		  var gd = document.form1.sex[0].checked;
+		  var sex;
+		  var note = document.form1.note.value;
+		 
+
+		  var str = "";
+          var x = document.getElementsByName("hobby");
+         for (i in x){
+    	   if (x[i].checked){
+        	str += x[i].value + ", ";
+          }
+       }
+		  
+		  
+
+		  if(gd == true) { sex = "男";}else { sex = "女"}
+		  
+		  //var hobby = document.form1.hobby[i].value;
+                 output.innerHTML = "姓名:"+ username +"<br>";
+		  output.innerHTML += "性別:"+ sex +"<br>";
+		  output.innerHTML += "生日:"+ birthday+"<br>";
+		  output.innerHTML += "興趣:"+ str+"<br>";
+		  output.innerHTML += "自傳:"+ note;
+		}
+		
+	</script>
+
+    <form name="form1" action="User_Verification.jsp" method="post">
+    姓名-><br>
+	<input type="text" id="username" />
+	<br>
+    生日-><br>
+	<input type="text" id="birthday" />
+    <br>
+	性別-><br>
+	<input type="radio" id="sex" value="male"> 男
+    <input type="radio" id="sex" value="female"> 女<br>
+	興趣-><br>
+	<input type="checkbox" name="hobby" value="電影">電影
+    <input type="checkbox" name="hobby" value="吃吃吃">吃吃吃
+	<input type="checkbox" name="hobby" value="運動">運動<br>
+	<input type="checkbox" name="hobby" value="睡覺">睡覺
+	<input type="checkbox" name="hobby" value="小說">小說
+	<input type="checkbox" name="hobby" value="音樂">音樂
+	<br>
+	自傳-><br>
+	<textarea id="note" ng-model="message" cols="40" rows="10"></textarea>
+	<br><br>
+	<!--button ng-click="save()">Save</button-->
+	<input type="button" name="enter" value="enter" onClick="Function()">
+	<p id="output"></p>
+	</form>
+
+<a href="index.html" >回到我的自傳
+</body>
+<html>
