@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="BIG5">
+  <meta charset="UTF-8">
   <title>Document</title>
 </head>
-<body> 
+<body>
   <form name="form1">
-    ©m¦W¡G<input type="text"  name="Name" value=""><br>
-    ©Ê§O¡G¨k<input type="radio"  name="SEX" checked value="0">
-    ¤k<input type="radio"  name="SEX" value="1"><br>
-    ¥Í¤é¡G<input type="text"  name="Birth" value=""><br>
-    ¿³½ì¡G<input type="checkbox"  name="Hobby" value="®È¹C">®È¹C
-		<input type="checkbox"  name="Hobby" value="¹q¼v">¹q¼v
-		<input type="checkbox"  name="Hobby" value="¬ü­¹">¬ü­¹
-		<input type="checkbox"  name="Hobby" value="­µ¼Ö">­µ¼Ö<br>
-    ¦Û¶Ç¡G<input type="text"  name="autograph" value=""><br>
-    <input type="button" value="°e¥X" onclick="postData()" />
+    å§“åï¼š<input type="text"  name="Name" value=""><br>
+    æ€§åˆ¥ï¼šç”·<input type="radio"  name="SEX" checked value="0">
+    å¥³<input type="radio"  name="SEX" value="1"><br>
+    ç”Ÿæ—¥ï¼š<input type="text"  name="Birth" value=""><br>
+    èˆˆè¶£ï¼š<input type="checkbox"  name="Hobby" value="æ—…éŠ">æ—…éŠ
+		<input type="checkbox"  name="Hobby" value="é›»å½±">é›»å½±
+		<input type="checkbox"  name="Hobby" value="ç¾é£Ÿ">ç¾é£Ÿ
+		<input type="checkbox"  name="Hobby" value="éŸ³æ¨‚">éŸ³æ¨‚<br>
+    è‡ªå‚³ï¼š<input type="text"  name="autograph" value=""><br>
+    <input type="button" value="é€å‡º" onclick="postData()" />
   </form>
   <p id="output"></p>
   <script>
     function postData(){
-	
-		if(confirm('§A½T©w°e¥X¡H')){
+
+		if(confirm('ä½ ç¢ºå®šé€å‡ºï¼Ÿ')){
         var output = document.getElementById("output");
         var Name = document.form1.Name.value;
-        var SEX = "¨k";
-		if(document.form1.SEX.value==1)SEX = "¤k";
+        var SEX = "ç”·";
+		if(document.form1.SEX.value==1)SEX = "å¥³";
         var Birth = document.form1.Birth.value;
 		var count = document.form1.Hobby.length;
         var Hobby = "";
