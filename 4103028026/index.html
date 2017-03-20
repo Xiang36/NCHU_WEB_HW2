@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form name="form1">
+    <input type="text"  name="username" value="路人甲">
+    <input type="button" value="送出" onclick="postData()" />
+  </form>
+  <p id="output"></p>
+  <script>
+      function postData(){
+        var output = document.getElementById("output");
+        var username = document.form1.username.value;
+        output.innerHTML = "歡迎您光臨 "+ username;
+      }
+  </script>
+</body>
+</html>

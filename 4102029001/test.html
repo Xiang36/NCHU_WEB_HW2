@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+			<script>
+			function myfunction(){
+			
+			var HTML = "<table border=1 width=100%>";
+			HTML+= "<tr><td>username</td><td>"+document.form1.username.value+"</td></tr>";
+			HTML+= "<tr><td>birthday</td><td>"+document.form1.birthday.value+"</td></tr>";
+			HTML+= "<tr><td>sex</td><td>"+document.form1.sex.value+"</td></tr>";
+			HTML+= "<tr><td>hobby</td><td>";
+			for(i=0;i<document.form1.hobby.length;i++){
+				if(document.form1.hobby[i].checked){
+				HTML += document.form1.hobby[i].value+";";
+				}
+			}
+			HTML+="</td></tr>"
+			HTML+= "<tr><td>subject</td><td>";
+			for(i=0;i<document.form1.subject.length;i++){
+				if(document.form1.subject[i].selected){
+				HTML += document.form1.subject[i].value;
+				}
+			}
+			HTML+="</td></tr>"
+			HTML+= "<tr><td>note</td><td>"+document.form1.note.value+"</td></tr>";
+			
+			document.getElementById("outputDiv").innerHTML = HTML;
+			}
+			</script>
+	</head>
+	
+	<body>
+		<form name="form1">
+		<input type="text" name="username">
+		<input type="text" name="birthday" placeholder="YYYY/MM/DD">
+		<input type="radio" name="sex" value="male">男
+		<input type="radio" name="sex" value="female">女
+		<input type="checkbox" name="hobby" value="swimming" checked>游泳
+		<input type="checkbox" name="hobby" value="basketball">籃球
+		<input type="checkbox" name="hobby" value="baseball">棒球
+		<select name="subject">
+		<option value="Chinese">國文</option>
+		<option value="English">英文</option>
+		</select>
+		自傳<input type="textarea" name="note" cols="50" rows="10">
+		<input type="button" value="送出" onclick="myfunction()">
+		<div id="outputDiv">
+		</div>
+	</body>
+</html>

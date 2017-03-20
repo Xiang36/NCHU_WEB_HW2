@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function myfunction(){
+				a = nameValidate(document.form1.username.value);
+				b = bdValidate(document.form1.birthday.value);
+				c = noteValidate(document.form1.note.value);
+				d = sexValidate(document.form1.sex.value);
+				if ( a == true && b == true && c == true && d == true){
+					var HTML = "<table border=1 width=25% align=center>";
+					HTML+= "<tr><td width=35%>username</td><td>"+document.form1.username.value+"</td></tr>";
+					HTML+= "<tr><td>birthday</td><td>"+document.form1.birthday.value+"</td></tr>";
+					HTML+= "<tr><td>sex</td><td>"+document.form1.sex.value+"</td></tr>";
+					HTML+= "<tr><td>hobby</td><td>";
+					for(i=0;i<document.form1.hobby.length;i++){
+						if(document.form1.hobby[i].checked){
+						HTML += document.form1.hobby[i].value+";";
+						}
+					}
+					HTML+="</td></tr>"
+					HTML+= "<tr><td>subject</td><td>";
+					for(i=0;i<document.form1.subject.length;i++){
+						if(document.form1.subject[i].selected){
+						HTML += document.form1.subject[i].value;
+						}
+					}
+					HTML+="</td></tr>"
+					HTML+= "<tr><td>note</td><td>"+document.form1.note.value+"</td></tr>";
+					
+					document.getElementById("outputDiv").innerHTML = HTML;
+				}else{
+					document.getElementById("outputDiv").innerHTML = "";
+				}
+			}
+			function nameValidate(name){
+				if (name == ""){
+					document.getElementById("nameER").innerHTML ="<p style='color:red'>can't be blank!!!</p>";
+					return false;
+				}else{
+					document.getElementById("nameER").innerHTML ="";
+					return true;
+				}
+			}
+			function bdValidate(bb){
+				if (bb == ""){
+					document.getElementById("bdER").innerHTML ="<p style='color:red'>can't be blank!!!</p>";
+					return false;
+				}else{
+					document.getElementById("bdER").innerHTML ="";
+					return true;
+				}
+			}
+			function noteValidate(nn){
+				if (nn == ""){
+					document.getElementById("noteER").innerHTML ="<p style='color:red'>can't be blank!!!</p>";
+					return false;
+				}else{
+					document.getElementById("noteER").innerHTML ="";
+					return true;
+				}
+			}
+			function sexValidate(ss){
+				if (ss == ""){
+					document.getElementById("ssER").innerHTML ="<p style='color:red'>choose your gender!!!</p>";
+					return false;
+				}else{
+					document.getElementById("ssER").innerHTML ="";
+					return true;
+				}
+			}
+		</script>
+		<style>
+		input:invalid {
+			border: 1px solid red;
+		}
+		input:valid {
+			border: 1px solid green;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<br><br><br><br>
+		<form name="form1" align="center">
+		姓名 : <input type="text" name="username" required><span id="nameER"></span><br><br>
+		生日 : <input <input type="date" name="birthday" required id="bd"><span id="bdER"></span><br><br>
+		性別 : <input type="radio" name="sex" value="male" required>男<input type="radio" name="sex" value="female">女<span id="ssER"></span><br><br>
+		興趣 : <input type="checkbox" name="hobby" value="swimming">游泳
+		<input type="checkbox" name="hobby" value="basketball">籃球
+		<input type="checkbox" name="hobby" value="baseball">棒球<br><br>
+		<select name="subject">
+		科目 : <option value="Chinese">國文</option>
+		<option value="English">英文</option>
+		</select><br><br>
+		自傳 : <input type="textarea" name="note" cols="50" rows="10" required><span id="noteER"></span>
+		<input type="button" value="送出" onclick="myfunction()">
+		</form>
+		<br><br><br>
+		<div id="outputDiv">
+		</div>
+	</body>
+</html>
