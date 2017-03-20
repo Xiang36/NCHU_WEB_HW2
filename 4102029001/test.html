@@ -3,7 +3,7 @@
 	<head>
 			<script>
 			function myfunction(){
-			
+
 			var HTML = "<table border=1 width=100%>";
 			HTML+= "<tr><td>username</td><td>"+document.form1.username.value+"</td></tr>";
 			HTML+= "<tr><td>birthday</td><td>"+document.form1.birthday.value+"</td></tr>";
@@ -23,27 +23,27 @@
 			}
 			HTML+="</td></tr>"
 			HTML+= "<tr><td>note</td><td>"+document.form1.note.value+"</td></tr>";
-			
+
 			document.getElementById("outputDiv").innerHTML = HTML;
 			}
 			</script>
 	</head>
-	
+
 	<body>
 		<form name="form1">
 		<input type="text" name="username">
 		<input type="text" name="birthday" placeholder="YYYY/MM/DD">
-		<input type="radio" name="sex" value="male">¨k
-		<input type="radio" name="sex" value="female">¤k
-		<input type="checkbox" name="hobby" value="swimming" checked>´åªa
-		<input type="checkbox" name="hobby" value="basketball">Äx²y
-		<input type="checkbox" name="hobby" value="baseball">´Î²y
+		<input type="radio" name="sex" value="male">ç”·
+		<input type="radio" name="sex" value="female">å¥³
+		<input type="checkbox" name="hobby" value="swimming" checked>æ¸¸æ³³
+		<input type="checkbox" name="hobby" value="basketball">ç±ƒçƒ
+		<input type="checkbox" name="hobby" value="baseball">æ£’çƒ
 		<select name="subject">
-		<option value="Chinese">°ê¤å</option>
-		<option value="English">­^¤å</option>
+		<option value="Chinese">åœ‹æ–‡</option>
+		<option value="English">è‹±æ–‡</option>
 		</select>
-		¦Û¶Ç<input type="textarea" name="note" cols="50" rows="10">
-		<input type="button" value="°e¥X" onclick="myfunction()">
+		è‡ªå‚³<input type="textarea" name="note" cols="50" rows="10">
+		<input type="button" value="é€å‡º" onclick="myfunction()">
 		<div id="outputDiv">
 		</div>
 	</body>

@@ -27,7 +27,7 @@
 					}
 					HTML+="</td></tr>"
 					HTML+= "<tr><td>note</td><td>"+document.form1.note.value+"</td></tr>";
-					
+
 					document.getElementById("outputDiv").innerHTML = HTML;
 				}else{
 					document.getElementById("outputDiv").innerHTML = "";
@@ -79,22 +79,22 @@
 		}
 		</style>
 	</head>
-	
+
 	<body>
 		<br><br><br><br>
 		<form name="form1" align="center">
-		©m¦W : <input type="text" name="username" required><span id="nameER"></span><br><br>
-		¥Í¤é : <input <input type="date" name="birthday" required id="bd"><span id="bdER"></span><br><br>
-		©Ê§O : <input type="radio" name="sex" value="male" required>¨k<input type="radio" name="sex" value="female">¤k<span id="ssER"></span><br><br>
-		¿³½ì : <input type="checkbox" name="hobby" value="swimming">´åªa
-		<input type="checkbox" name="hobby" value="basketball">Äx²y
-		<input type="checkbox" name="hobby" value="baseball">´Î²y<br><br>
+		å§“å : <input type="text" name="username" required><span id="nameER"></span><br><br>
+		ç”Ÿæ—¥ : <input <input type="date" name="birthday" required id="bd"><span id="bdER"></span><br><br>
+		æ€§åˆ¥ : <input type="radio" name="sex" value="male" required>ç”·<input type="radio" name="sex" value="female">å¥³<span id="ssER"></span><br><br>
+		èˆˆè¶£ : <input type="checkbox" name="hobby" value="swimming">æ¸¸æ³³
+		<input type="checkbox" name="hobby" value="basketball">ç±ƒçƒ
+		<input type="checkbox" name="hobby" value="baseball">æ£’çƒ<br><br>
 		<select name="subject">
-		¬ì¥Ø : <option value="Chinese">°ê¤å</option>
-		<option value="English">­^¤å</option>
+		ç§‘ç›® : <option value="Chinese">åœ‹æ–‡</option>
+		<option value="English">è‹±æ–‡</option>
 		</select><br><br>
-		¦Û¶Ç : <input type="textarea" name="note" cols="50" rows="10" required><span id="noteER"></span>
-		<input type="button" value="°e¥X" onclick="myfunction()">
+		è‡ªå‚³ : <input type="textarea" name="note" cols="50" rows="10" required><span id="noteER"></span>
+		<input type="button" value="é€å‡º" onclick="myfunction()">
 		</form>
 		<br><br><br>
 		<div id="outputDiv">
