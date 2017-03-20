@@ -3,8 +3,8 @@
 	<html lang="en">
 	<head>
 	<meta charset="UTF-8">
-	<title>ªí³æ</title>
-	<style>	
+	<title>è¡¨å–®</title>
+	<style>
 		table,th,td{
 			margin-left:50px;
 			margin-bottom:100px;
@@ -13,9 +13,9 @@
 			font-size: 130%;
 			font-style:normal;
 			font-family:cursive;
-			padding-top:10px; 
-			padding-left:5px; 
-			padding-right:5px; 
+			padding-top:10px;
+			padding-left:5px;
+			padding-right:5px;
 			padding-bottom:10px;
 		}
 		form{
@@ -23,37 +23,37 @@
 			margin-left:50px;
 			margin-right:500px;
 			margin-bottom:50px;
-			padding-top:20px; 
-			padding-left:50px; 
-			padding-right:5%; 
+			padding-top:20px;
+			padding-left:50px;
+			padding-right:5%;
 			padding-bottom:50px;
 		}
-		
+
 	</style>
 	</head>
-	
+
 	<body>
-	<h1>¼i¾úªí</h1>
+	<h1>å±¥æ­·è¡¨</h1>
 
 	<form name="form1">
-	©m¦W¡G<br>
-	<input type="text" name="username" value="¤ı¦Ë§®"/><br><br>
-	¥Í¤é¡G<br>
+	å§“åï¼š<br>
+	<input type="text" name="username" value="ç‹ç«¹å¦™"/><br><br>
+	ç”Ÿæ—¥ï¼š<br>
 	<input type="text" name="birthday" value="1997/5/19"/><br><br>
-	©Ê§O¡G<br>
-	<input type="radio" name="sex" value="¨k">¨k<br>
-	<input type="radio" name="sex" value="¤k" checked>¤k<br><br>
-	¿³½ì¡G<br>
-	<input type="checkbox" name="hobby" value="´åªa/" checked>´åªa
-	<input type="checkbox" name="hobby" value="¬İ®Ñ/">¬İ®Ñ
-	<input type="checkbox" name="hobby" value="¬İ¹q¼v/">¬İ¹q¼v
-	<input type="checkbox" name="hobby" value="¨ä¥L">¨ä¥L<br><br>
-	¦Û¶Ç¡G<br>
+	æ€§åˆ¥ï¼š<br>
+	<input type="radio" name="sex" value="ç”·">ç”·<br>
+	<input type="radio" name="sex" value="å¥³" checked>å¥³<br><br>
+	èˆˆè¶£ï¼š<br>
+	<input type="checkbox" name="hobby" value="æ¸¸æ³³/" checked>æ¸¸æ³³
+	<input type="checkbox" name="hobby" value="çœ‹æ›¸/">çœ‹æ›¸
+	<input type="checkbox" name="hobby" value="çœ‹é›»å½±/">çœ‹é›»å½±
+	<input type="checkbox" name="hobby" value="å…¶ä»–">å…¶ä»–<br><br>
+	è‡ªå‚³ï¼š<br>
 	<textarea rows=20 cols=50 name="note"></textarea><br><br>
-	<input type="button" value="°e¥X" onclick="postData()"/>
+	<input type="button" value="é€å‡º" onclick="postData()"/>
 	</form>
     <p id="output"></p>
-	
+
 	<script>
       function postData(){
         var output = document.getElementById("output");
@@ -65,7 +65,7 @@
 		var hobby2 = document.form1.hobby[2].value;
 		var hobby3 = document.form1.hobby[3].value;
 		var note = document.form1.note.value;
-		
+
 		if(Boolean(document.form1.hobby[0].checked==true)){var a= hobby}
         else{var a=""}
         if(Boolean(document.form1.hobby[1].checked==true)){var b= hobby1}
@@ -74,9 +74,9 @@
         else{var c=""}
 		if(Boolean(document.form1.hobby[3].checked==true)){var d= hobby3}
         else{var d=""}
-		
-		alert("°e¥X¡I");
-        output.innerHTML = "<table><tr> <th>©m¦W</th> <th>¥Í¤é</th> <th>©Ê§O</th> <th>¿³½ì</th> <th>¦Û¶Ç</th> </tr>"
+
+		alert("é€å‡ºï¼");
+        output.innerHTML = "<table><tr> <th>å§“å</th> <th>ç”Ÿæ—¥</th> <th>æ€§åˆ¥</th> <th>èˆˆè¶£</th> <th>è‡ªå‚³</th> </tr>"
 				+"<tr><td>"+username+"</td> <td>"+birthday+"</td> <td>"+sex+"</td> <td>"+(a+b+c+d)+"</td> <td>"+note+"</td> </tr> </table>";
 		}
 	</script>
