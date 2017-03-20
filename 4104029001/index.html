@@ -4,18 +4,18 @@
 </head>
 <body>
 <form name= "form" method="post">
-±b¸¹<input type="text" size="20" name="username"><br>
-±K½X<input type="password" size="20" name="userpass"><br>
-¿³½ì<input type="text" size="20" name="hobby"><br>
-<input type="radio" name="sex" value="male" checked>¨k
-<input type="radio" name="sex" value="female">¤k
+å¸³è™Ÿ<input type="text" size="20" name="username"><br>
+å¯†ç¢¼<input type="password" size="20" name="userpass"><br>
+èˆˆè¶£<input type="text" size="20" name="hobby"><br>
+<input type="radio" name="sex" value="male" checked>ç”·
+<input type="radio" name="sex" value="female">å¥³
 
 <select name="subject"><br>
-<option value="Chinese">°ê¤å</option>
-<option value="English">­^¤å</option>
-¦Û¶Ç<textarea name="note" cols="50" rows="10"></textarea>
-<input type="button" value="°e¥X" onClick="post();">
-<input type="reset" value="­«³]">
+<option value="Chinese">åœ‹æ–‡</option>
+<option value="English">è‹±æ–‡</option>
+è‡ªå‚³<textarea name="note" cols="50" rows="10"></textarea>
+<input type="button" value="é€å‡º" onClick="post();">
+<input type="reset" value="é‡è¨­">
 </form>
 
 <div><p id="output"></p></div>
@@ -23,17 +23,17 @@
 
 <script>
         function post(){
-		var output = document.getElementById("output");		
+		var output = document.getElementById("output");
 		var my_text = document.form.username.value;
 		var my_password = document.form.userpass.value;
 		var my_gender = document.form.sex.value;
 		var my_hobby = document.form.hobby.value;
 		var my_sub = document.form.subject.value;
 		var my_note = document.form.note.value;
-			output.innerHTML = "<table border ="+'"'+"1"+'"'+ "> <tr> <td>NAME</td> <td>GENDER</td> <td>HOBBY</td> <td>SUBJECT</td> <td>NOTE</td></tr> <tr><td>"+my_text+"</td> <td>"+my_text+"</td> <td>"+my_hobby+"</td> <td>"+my_sub+"</td> <td>"+my_note+"</td> </tr></table>";		
-		alert("¿é¤J¦¨¥\");
+			output.innerHTML = "<table border ="+'"'+"1"+'"'+ "> <tr> <td>NAME</td> <td>GENDER</td> <td>HOBBY</td> <td>SUBJECT</td> <td>NOTE</td></tr> <tr><td>"+my_text+"</td> <td>"+my_text+"</td> <td>"+my_hobby+"</td> <td>"+my_sub+"</td> <td>"+my_note+"</td> </tr></table>";
+		alert("è¼¸å…¥æˆåŠŸ");
 		}
-		
+
 </script>
 
 
