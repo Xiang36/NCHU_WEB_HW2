@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>CSSSC</title>
+<style>
+	body{
+		background-color:lightgreen;
+		text-align:center;
+	}
+	a{
+		font-weight: 600;
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function over(){
+　			
+			var n = document.getElementById("person").na.value;
+			var b = document.getElementById("person").bir.value;
+			var s = document.getElementById("person").sex.value;
+			var hobby = "";
+			if(person.check1.checked == true){
+				hobby +="旅遊\n";
+				}
+			if(person.check2.checked == true){
+				hobby +="音樂\n";
+				}
+			if(person.check3.checked == true){
+				hobby +="美術\n";
+				}
+			if(person.check4.checked == true){
+				hobby +="閱讀\n" ;
+				}
+		
+			var bio = document.getElementById("person").per.value;
+			var c = document.getElementById("person").personal.value;
+			
+			alert(document.getElementById("person").na.value +'\n'+document.getElementById("person").bir.value +'\n'+document.getElementById("person").sex.value +'\n'+ hobby +'\n'+document.getElementById("person").personal.value);
+			
+			document.write('請確認');
+				document.write("<table border='2'>");
+                var myArray = new Array();
+
+                    document.write("<tr><td style='width: 100px;'>姓名</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + n + "</td></tr>");
+					document.write("<tr><td style='width: 100px;'>生日</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + b + "</td></tr>");
+					document.write("<tr><td style='width: 100px;'>性別</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + s + "</td></tr>");
+					document.write("<tr><td style='width: 100px;'>興趣</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + hobby + "</td></tr>");
+					document.write("<tr><td style='width: 100px;'>自傳</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + bio + "</td></tr>");
+					document.write("<tr><td style='width: 100px;'>國家</td>");
+                    document.write("<td style='width: 100px; text-align: right;'>" + c + "</td></tr>");
+                
+                
+				document.write("</table>");
+				
+		}
+	</script>
+
+
+
+	<form id="person" method="post">
+		姓名： 
+		<input type="text" name="na" placeholder="請輸入姓名" />
+		<br><br>
+		生日： 
+		<input type="text" name="bir" placeholder="XXXX/XX/XX"/>
+		<br><br>
+		性別：
+		<INPUT TYPE="radio"  NAME="sex" value="男">男
+		<INPUT TYPE="radio"  NAME="sex" value="女">女
+		<br><br>
+		興趣：
+		<INPUT TYPE="checkbox"  NAME="check1" value="旅遊">旅遊 
+		<INPUT TYPE="checkbox"  NAME="check2" value="音樂">音樂
+		<INPUT TYPE="checkbox"  NAME="check3" value="美術">美術
+		<INPUT TYPE="checkbox"  NAME="check4" value="閱讀">閱讀<p>
+		自傳：　　　　　　　　　　　 
+		<textarea id="per" style="height:100px ; position:fixed; top:160px; left:620px; "></textarea><br><br><br><br><br><br>
+		國家：<select name="personal">
+			<option value="台灣">台灣</option>
+			<option value="韓國">韓國</option>
+			<option value="日本">日本</option>
+			<option value="美國">美國</option>
+		</select><br><br>
+		<input type="button" value="確定" onclick="over()">
+	</form>
+	<a href="..\index.html">首頁~!!!</a><br>
+	<a href="..\html\yay.html">YA~~~</a>
+</body>
+</html>
