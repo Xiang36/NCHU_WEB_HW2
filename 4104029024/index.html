@@ -8,23 +8,24 @@
 </head>
 <body>
 	<script>
-		
+
+
 	function post(){
         var name = document.form1.name.value;
 		var birthday = document.form1.birthday.value;
 		var gender = document.form1.gender.value;
 		var hobby = document.form1.hobby.value;
 		var bio = document.form1.bio.value;
-		
+
 		alert("Your input is Name: "+name+"\n Birthday: "+birthday+"\n Gender: "+gender+"\n Hobby: "+hobby+"\n Autobiography:"+bio);
-		 
+
 		document.getElementById("td1").innerHTML="<b>Name: </b>"+name;
 		document.getElementById("td2").innerHTML="<b>Date: </b>"+birthday;
 		document.getElementById("td3").innerHTML="<b>Gender: </b>"+gender;
 		document.getElementById("td4").innerHTML="<b>Hobby: </b>"+hobby;
 		document.getElementById("td5").innerHTML="<b>Autobiography: </b>"+bio;
 }
-	  
+
 
 	</script>
 
@@ -43,18 +44,16 @@
 	</form>
 	<p>
 		<table id="table1" border=1 width=500>
-		
+
 			<tr><td id="td1" ></td></tr>
 			<tr><td id="td2" ></td></tr>
 			<tr><td id="td3" ></td></tr>
 			<tr><td id="td4" ></td></tr>
 			<tr><td id="td5" ></td></tr>
-		</table> 
+		</table>
 	</p>
 
 	</center>
-	
+
 </body>
 </html>
-
-
